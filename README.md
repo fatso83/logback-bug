@@ -67,6 +67,6 @@ But to do that, I need to verify the issue is fixed, and for that I need a repro
 of which I have none ...
 
 # Related
-- https://stackoverflow.com/q/40085486/200987
-- https://jira.qos.ch/browse/LOGBACK-879
+- [StackOverflow](https://stackoverflow.com/q/40085486/200987) Logback on windows doesn't close rotated logfiles
+- [LOGBACK-879](https://jira.qos.ch/browse/LOGBACK-879) Logback zip compression cannot delete the original files after the zip file is created
 - https://stackoverflow.com/a/9800175/200987
