@@ -1,5 +1,7 @@
 # Unsuccessful attempt at reproducing logback issue
 
+> tldr; unsuccessful delete causes disk trashing and cpu at 100%
+
 We experienced that a server was rendered fully unusable when
 switching a certain appender to use `FixedWindowRollingPolicy`.
 A single cpu core was 100% allocated to `logger.debug()` calls.
@@ -63,3 +65,8 @@ fw.flush();
 
 But to do that, I need to verify the issue is fixed, and for that I need a reproduction case, 
 of which I have none ...
+
+# Related
+- https://stackoverflow.com/q/40085486/200987
+- https://jira.qos.ch/browse/LOGBACK-879
+- https://stackoverflow.com/a/9800175/200987
