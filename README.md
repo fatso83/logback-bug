@@ -72,7 +72,14 @@ fw.flush();
 In order to test this fix, I would need to verify the issue is fixed, and for that I need a reproduction case,
 hence this repository.
 
+## How to reproduce
+0. Install the log reading program "glogg"
+1. Start this program (easiest: open in intellij->Run)
+2. Open the file "test.log" in "glogg.exe"
+3. See the cpu spike to a 100% and a lot of output about not being able to delete a file
+
 # Related
 - [StackOverflow](https://stackoverflow.com/q/40085486/200987) Logback on windows doesn't close rotated logfiles
 - [LOGBACK-879](https://jira.qos.ch/browse/LOGBACK-879) Logback zip compression cannot delete the original files after the zip file is created
 - https://stackoverflow.com/a/9800175/200987
+- [Logback renamingError](http://logback.qos.ch/codes.html#renamingError)
