@@ -1,10 +1,16 @@
-# Unsuccessful attempt at reproducing logback issue
+# Reproduction of logback issue
 
-> tldr; unsuccessful delete causes disk trashing and cpu at 100%
+> tldr; an unsuccessful delete , following a compress, causes disk trashing and cpu at 100% in Logback 
+
+## What is this?
 
 We experienced that a server was rendered fully unusable when
 switching a certain appender to use `FixedWindowRollingPolicy`.
-A single cpu core was 100% allocated to `logger.debug()` calls.
+A single cpu core was 100% allocated to `logger.debug()` calls. 
+
+This repository, with its instructions, is a reproduction of how to recreate this situation.
+
+## So what was going on?
 
 The config looked like this:
 ```
@@ -50,8 +56,8 @@ end up calling this code in `Compressor`:
     }
 ```
 
-This means that if the log file is not deleted, it remains as big and will of course 
-trigger a new rollover on the next triggering event, resulting in the just created
+This means that _if the log file is not deleted, it remains as big and will of course 
+trigger a new rollover on the next triggering event_, resulting in the just created
 zip file to be moved (and every other in turn), zipping all 100MB+one line all over again.
 
 The old `File#delete` API does not say why it cannot delete the file, but I suspect something
@@ -63,8 +69,8 @@ FileWriter fw = new FileWriter(file, false);
 fw.flush();
 ```
 
-But to do that, I need to verify the issue is fixed, and for that I need a reproduction case, 
-of which I have none ...
+In order to test this fix, I would need to verify the issue is fixed, and for that I need a reproduction case,
+hence this repository.
 
 # Related
 - [StackOverflow](https://stackoverflow.com/q/40085486/200987) Logback on windows doesn't close rotated logfiles
