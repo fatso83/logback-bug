@@ -10,6 +10,11 @@ A single cpu core was 100% allocated to `logger.debug()` calls.
 
 This repository, with its instructions, is a reproduction of how to recreate this situation.
 
+![Skjermbilde 2021-06-28 133614](https://user-images.githubusercontent.com/618076/123632919-ccb28b80-d818-11eb-862f-af535f175906.png)
+![Skjermbilde 2021-06-28 133532](https://user-images.githubusercontent.com/618076/123632920-cd4b2200-d818-11eb-8765-a3b75df2c188.png)
+![Skjermbilde 2021-06-28 133411](https://user-images.githubusercontent.com/618076/123632923-cd4b2200-d818-11eb-89fc-8193782103b8.png)
+![Skjermbilde 2021-06-28 133821](https://user-images.githubusercontent.com/618076/123632877-bc9aac00-d818-11eb-91c5-795f77e2a2d8.png)
+
 ## So what was going on?
 
 The config looked like this:
